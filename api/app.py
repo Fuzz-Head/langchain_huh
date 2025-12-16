@@ -10,6 +10,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 os.environ['OPENAI_API_KEY']=os.getenv("OPENAI_API_KEY")
+os.environ["LANGSMITH_TRACING"]="true"
+## If this is commented how is it tracking?
+## Maybe because it is already tracked and is a part of it.
+# os.environ["LANGCHAIN_API_KEY"]=os.getenv("LANGCHAIN_API_KEY")
 
 app=FastAPI(
     title="Langchain server",
@@ -23,15 +27,15 @@ add_routes(
     path="/openai"
 )
 model=ChatOpenAI()
-llm=Ollama(model="llama2")
+llm=Ollama(model="llama3:8b")
 
-prompt1=ChatPromptTemplate.from_template("Write me an essay about {topic} with 100 words")
+prompt1=ChatPromptTemplate.from_template("Write me a thought about {topic} with 15 words")
 prompt2=ChatPromptTemplate.from_template("Write me an poem about {topic} with 80 words")
 
 add_routes(
     app,
     prompt1|model,
-    path="/essay"
+    path="/thought"
 )
 
 add_routes(

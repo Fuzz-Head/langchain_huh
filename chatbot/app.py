@@ -36,7 +36,7 @@ chain=prompt|llm|output_parser
 
 ## need these modifications so as to keep it to the original
 @traceable
-def get_output(question):
+def get_output_openai(question):
     if question:
         response = chain.invoke({'question': question})
         st.write(response)
@@ -44,4 +44,4 @@ def get_output(question):
         st.info("Please enter a question")
 
 # Call function with input
-get_output(input_text)
+get_output_openai(input_text)
