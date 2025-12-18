@@ -1,5 +1,5 @@
 [project]
-name = "langchain"
+name = "langchain_huh"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -14,6 +14,7 @@ dependencies = [
     "fastapi>=0.124.4",
     "groq>=0.37.1",
     "httpx<0.28.0",
+    "langchain>=0.1.20",
     "langchain-chroma>=0.1.4",
     "langchain-community>=0.0.38",
     "langchain-core>=0.1.53",
@@ -23,6 +24,7 @@ dependencies = [
     "langchain-text-splitters>=0.0.2",
     "langchainhub>=0.1.21",
     "langserve>=0.2.3",
+    "pydantic<2",
     "pypdf>=6.4.2",
     "pypdf2>=3.0.1",
     "python-dotenv>=1.2.1",

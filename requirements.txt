@@ -25,3 +25,4 @@ langchain-text-splitters
 chromadb
 langchain_objectbox
 langchain_chroma
+langchain-classic
